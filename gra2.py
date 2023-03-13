@@ -147,9 +147,10 @@ if sum == 8:
     ears = input("1-4\n")
     if ears != 1 or ears != 2 or ears != 3 or ears != 4:
         print('Miałeś wybrać od 1 do 4 ')#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        sleep(1)
         print('Wybierz jeszcze raz')
-    enterr
-    
+        sleep(1)
+
     print(f"choose your eyes: \n|/#ⅇ-ⅇ#\|          |#o-o#|        #^ - ^#     /#°^°#\ ")
     eyes = input("1-4\n")
 
@@ -659,11 +660,7 @@ def fight():
                 continue
 
 
-
 #1 ucieczka (tutorial)
-
-from time import sleep
-
 print("=--="*40)
 print("All the cats were startled. Never in the houndreds of years there was such accident.\n\n")
 sleep(1)
