@@ -77,11 +77,11 @@ k = "o\o..o/o"
 l = "/. 00. \__.>"
 
 def earss():
-    if int(ears) == 1:
+    if ears == 1:
         print(a)
-    elif int(ears) == 2:
+    elif ears == 2:
         print(b)
-    elif int(ears) == 3:
+    elif ears == 3:
         print(c)
     else:
         print(d)
@@ -116,13 +116,15 @@ def namedcharacter():
     earss()
     eyess()
     bodyy()
+    global name
     if len(name) <= 7:
         print(f" {name}")
     else:
         print(name)
 
 
-while enterr == " " and sum == 6:
+while sum == 6:
+    enterr
     print (".\n\n\n.\n\n\n.\n\n\n")
     sum = sum+1
 
@@ -130,7 +132,8 @@ enterr.replace(" ", ".")
 enterr = input()
 sum = sum+1
 
-if enterr == " " and sum == 8:
+if sum == 8:
+    enterr
     print("\n\nchoose your character:\n")
     print(f"choose ears: \no......o           ^........^          ⅇ.......ⅇ      ∆......∆")
     ears = float(input("1-4\n"))
@@ -166,15 +169,15 @@ def fight():
     global strength
     global life
     global enemystrength
+    
 
     print("choose the element to fight")
 
     element = input(" a - fire, b - water, c - air, d - earth")
 
     def cat_lick():
-        global life
         print("do you want a cat to lick away your wounds?")
-        lick = int(input("1 - yes!      2 - no...      3 - i wanna end this game :')"))
+        lick = input("1 - yes!      2 - no...      3 - i wanna end this game :')")
         if lick == 1:
             life = 100
         elif lick == 2 or lick == 3:
@@ -182,8 +185,6 @@ def fight():
 
 
     def enemy_attack():
-        global life 
-        global enemystrength 
         if enemystrength >= 10 and enemystrength < 20 and life > 0:
             x = randint(3, 5)
             life = life - x
@@ -201,7 +202,6 @@ def fight():
     if element == "a":
         print("you chose fire")
         def attack_one():
-            global enemyhp
             x = randint(1, 10)
             if enemyhp > 0:
                 enemyhp = enemyhp - x
@@ -209,21 +209,18 @@ def fight():
                     print(enemyhp)
 
         def attack_two():
-                global enemyhp
                 x = randint(4, 14)
                 enemyhp = enemyhp - x
                 if enemyhp > 0:
                     print(enemyhp)
 
         def attack_three():
-                global enemyhp
                 x = randint(2, 8)
                 enemyhp = enemyhp - x
                 if enemyhp > 0:
                     print(enemyhp)
 
         def attack_four():
-                global enemyhp
                 x = randint(7, 16)
                 enemyhp = enemyhp - x
                 if enemyhp > 0:
@@ -318,28 +315,24 @@ def fight():
     if element == "b":
         print("you chose water")
         def attack_oneb():
-            global enemyhp
             x = randint(1, 10)
             enemyhp = enemyhp - x
             if enemyhp > 0:
                 print(enemyhp)
             
         def attack_twob():
-                global enemyhp
                 x = randint(4, 14)
                 enemyhp = enemyhp - x
                 if enemyhp > 0:
                     print(enemyhp)
 
         def attack_threeb():
-                global enemyhp
                 x = randint(2, 8)
                 enemyhp = enemyhp - x
                 if enemyhp > 0:
                     print(enemyhp)
 
         def attack_fourb():
-                global enemyhp
                 x = randint(7, 16)
                 enemyhp = enemyhp - x
                 if enemyhp > 0:
@@ -434,28 +427,24 @@ def fight():
     if element == "c":
         print("you chose air")
         def attack_onec():
-            global enemyhp
             x = randint(1, 10)
             enemyhp = enemyhp - x
             if enemyhp > 0:
                 print(enemyhp)
             
         def attack_twoc():
-                global enemyhp
                 x = randint(4, 14)
                 enemyhp = enemyhp - x
                 if enemyhp > 0:
                     print(enemyhp)
 
         def attack_threec():
-                global enemyhp
                 x = randint(2, 8)
                 enemyhp = enemyhp - x
                 if enemyhp > 0:
                     print(enemyhp)
 
         def attack_fourc():
-                global enemyhp
                 x = randint(7, 16)
                 enemyhp = enemyhp - x
                 if enemyhp > 0:
@@ -549,28 +538,24 @@ def fight():
     if element == "d":
         print("you chose earth")
         def attack_oned():
-            global enemyhp
             x = randint(1, 10)
             enemyhp = enemyhp - x
             if enemyhp > 0:
                 print(enemyhp)
             
         def attack_twod():
-                global enemyhp
                 x = randint(4, 14)
                 enemyhp = enemyhp - x
                 if enemyhp > 0:
                     print(enemyhp)
 
         def attack_threed():
-                global enemyhp
                 x = randint(2, 8)
                 enemyhp = enemyhp - x
                 if enemyhp > 0:
                     print(enemyhp)
 
         def attack_fourd():
-                global enemyhp
                 x = randint(7, 16)
                 enemyhp = enemyhp - x
                 if enemyhp > 0:
@@ -675,12 +660,12 @@ sleep(1)
 print("=--="*40)
 sleep(1)
 print("Hint: click a number and press enter on your keyboard to choose an option\n\n")
-question_1 = int(input("Come through the defence towers?\n 1 - yes\n"))
+question_1 = input("Come through the defence towers?\n 1 - yes\n")
 
 if question_1 == 1:
     print (f"\n\n{name} escaped... They wondered and wondered for so long, they started to get hungry.\n Suddenly, from the deep of the forest an evil troll jumpscared {name}.\n As scary as it was, this was still a great opportunity\n to gain something to eat.\n\n")
 
-question_2 = int(input("Do you want to kill this evil troll?\n 1 - yes\n"))
+question_2 = input("Do you want to kill this evil troll?\n 1 - yes\n")
 
 if question_2 == 1:
     print("hint: to fight choose element you want to use\n and select it by typing one of options on your keyboard\n then keep choosing the attacks you want to use\ until your enemy is dead")
@@ -719,7 +704,7 @@ print("=--="*40)
 sleep(2)
 
 while sth/1:
-    question_3 = int(input("Turn left?\n\n 1 - yes\n2 - i think no...\n"))
+    question_3 = input("Turn left?\n\n 1 - yes\n2 - i think no...\n")
     if question_3 == 1:
         print(f"{name.upper()}: I suppose I go left...\n\n")
         break
