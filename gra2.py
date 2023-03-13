@@ -83,9 +83,12 @@ def earss():
         print(b)
     elif ears == 3:
         print(c)
-    else:
+    elif ears == 4:
         print(d)
-   
+    else:
+        print('Miałeś wybrać od 1 do 4 ')#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        print('Wybierz jeszcze raz')
+
 def eyess():
     if eyes == 1:
         print(f"{e}")
@@ -93,9 +96,10 @@ def eyess():
         print(f"{f}")
     elif eyes == 3:
         print(f"{g}")
-    else:
+    elif eyes == 4:
         print(f"{h}")
         
+
 def bodyy():
     if body == 1:
         print(f"{i}")
@@ -103,11 +107,15 @@ def bodyy():
         print(f"{j}")
     elif body == 3:
         print(f"{k}")
-    else:
+    elif body == 4:
         print(f"{l}")
+    else:
+        print('Miałeś wybrać od 1 do 4 ')#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        print('Wybierz jeszcze raz')
 
 def character():
     earss()
+    
     eyess()
     bodyy()
 
@@ -136,14 +144,18 @@ if sum == 8:
     enterr
     print("\n\nchoose your character:\n")
     print(f"choose ears: \no......o           ^........^          ⅇ.......ⅇ      ∆......∆")
-    ears = float(input("1-4\n"))
-
+    ears = input("1-4\n")
+    if ears != 1 or ears != 2 or ears != 3 or ears != 4:
+        print('Miałeś wybrać od 1 do 4 ')#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        print('Wybierz jeszcze raz')
+    enterr
+    
     print(f"choose your eyes: \n|/#ⅇ-ⅇ#\|          |#o-o#|        #^ - ^#     /#°^°#\ ")
-    eyes = int(input("1-4\n"))
+    eyes = input("1-4\n")
 
 
     print(f"choose your body: \n/ u.u \            /. pq .\        o\o .. o/o     /. 00. \__.>")
-    body = int(input("1-4\n"))
+    body = input("1-4\n")
 
     print("your character: \n")
     character()
