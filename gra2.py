@@ -4,9 +4,9 @@ from time import sleep
 # start zrób!!!!!!
 
 print("START")
-print("\n.\n.\n")
 start = input()
-print("Let's go")
+print("\n.\n.\n")
+
 
 #origin story 
 
@@ -17,10 +17,11 @@ while sum >= 0 and sum <= 5:
     if sum == 0:
         enterr
         print("\n\nLong long time ago... \nWhen the Rose-merry Kingdom was ruled by cats and their allys, \na beautiful dynast, member of the royal family was born... \n\n")
+        #Dawno, dawno temu... Kiedy Królestwem Rose-merry  rządziły koty i ich sprzymierzeńcy,  piękna dynastia,w której narodził się członek rodziny królewskiej
         sum = sum+1
 
     enterr.replace(" ", ".")
-    enterr = input()
+    enterr
 
     if sum == 1:
         enterr
@@ -28,15 +29,16 @@ while sum >= 0 and sum <= 5:
         sum = sum+1
 
     enterr.replace(" ", ".")
-    enterr = input()
+    enterr
 
     if sum == 2:
         enterr
         print(" Years passed...\n\n")
+        #Minęły długie lata...
         sum = sum+1
     
     enterr.replace(" ", ".")
-    enterr = input()
+    enterr
     
     if sum == 3:
         enterr
@@ -44,7 +46,7 @@ while sum >= 0 and sum <= 5:
         sum = sum+1
 
     enterr.replace(" ", ".")
-    enterr = input()
+    enterr
 
     if sum == 4:
         enterr
@@ -52,7 +54,7 @@ while sum >= 0 and sum <= 5:
         sum = sum+1
 
     enterr.replace(" ", ".")
-    enterr = input()
+    enterr
 
     if sum == 5:
         enterr
@@ -137,7 +139,7 @@ while sum == 6:
     sum = sum+1
 
 enterr.replace(" ", ".")
-enterr = input()
+enterr
 sum = sum+1
 
 if sum == 8:
