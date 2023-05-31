@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnitTestProject1;
 
 public class Program
 {
@@ -10,7 +9,7 @@ public class Program
         string name = Console.ReadLine();
         Hero hero = new Hero(name);
 
-        Console.WriteLine($"{hero.Name} zaczynasz swoją podróż");
+        Console.WriteLine($"{hero.Name}, zaczynasz swoją podróż");
         Console.WriteLine($"Twoje statystyki: {hero}");
 
         while (hero.Hp > 0)
@@ -19,7 +18,7 @@ public class Program
             Console.WriteLine($"Twoje przedmioty: {string.Join(", ", hero.Items)}");
             Console.WriteLine($"Twoje statystyki: {hero}");
             int pdNeeded = 125 - hero.Pd;
-            Console.WriteLine($"Potrzebujesz {pdNeeded} Pd do kolejnego poziomu!");
+            Console.WriteLine($"Potrzebujesz {pdNeeded} PD do kolejnego poziomu!");
             Console.WriteLine("1 - walka");
             Console.WriteLine("2 - sklep");
 
@@ -34,16 +33,16 @@ public class Program
                     Console.WriteLine(new string('!', 50));
                     Console.WriteLine("Nadszedł czas na walkę z Bossem!");
                     Boss boss = new Boss(hero.Level);
-                    while (boss.Hp > 0)
+                    while (boss.Hp > 0 && hero.Hp > 0)
                     {
                         Console.WriteLine($"{hero.Name}, walczysz teraz z {boss.Name}");
-                        Console.WriteLine($"Przeciwnik ma {boss.Hp} Hp i zadaje ci {boss.Attack} obrażeń");
+                        Console.WriteLine($"Przeciwnik ma {boss.Hp} HP i zadaje ci {boss.Attack} obrażeń");
 
                         hero.Hp -= boss.Attack;
                         if (hero.Hp <= 0)
                             break;
 
-                        Console.WriteLine($"Zostało ci {hero.Hp} Hp");
+                        Console.WriteLine($"Zostało ci {hero.Hp} HP");
                         Console.WriteLine($"Twoje przedmioty: {string.Join(", ", hero.Items)}");
                         Console.WriteLine("1 - atak");
                         Console.WriteLine("2 - uleczyć");
@@ -87,10 +86,7 @@ public class Program
                         }
                     }
 
-                    if (input1 == "stop")
-                        break;
-
-                    if (boss.Hp <= 0)
+                    if (boss.Hp <= 0 && hero.Hp > 0)
                     {
                         Console.WriteLine("Brawo! Pokonałeś Bossa!");
                         Console.WriteLine($"Dostałeś {boss.Coins} coinów i {boss.Exp} doświadczenia");
@@ -108,16 +104,16 @@ public class Program
                 else
                 {
                     Enemy enemy = new Enemy(hero.Level);
-                    while (enemy.Hp > 0)
+                    while (enemy.Hp > 0 && hero.Hp > 0)
                     {
                         Console.WriteLine($"{hero.Name}, walczysz teraz z {enemy.Name}");
-                        Console.WriteLine($"Przeciwnik ma {enemy.Hp} Hp i zadaje ci {enemy.Attack} obrażeń");
+                        Console.WriteLine($"Przeciwnik ma {enemy.Hp} HP i zadaje ci {enemy.Attack} obrażeń");
 
                         hero.Hp -= enemy.Attack;
                         if (hero.Hp <= 0)
                             break;
 
-                        Console.WriteLine($"Zostało ci {hero.Hp} Hp");
+                        Console.WriteLine($"Zostało ci {hero.Hp} HP");
                         Console.WriteLine($"Twoje przedmioty: {string.Join(", ", hero.Items)}");
                         Console.WriteLine("1 - atak");
                         Console.WriteLine("2 - uleczyć");
@@ -161,10 +157,7 @@ public class Program
                         }
                     }
 
-                    if (input2 == "stop")
-                        break;
-
-                    if (enemy.Hp <= 0)
+                    if (enemy.Hp <= 0 && hero.Hp > 0)
                     {
                         Console.WriteLine($"Brawo! Pokonałeś przeciwnika {enemy.Name}");
                         Console.WriteLine($"Dostałeś {enemy.Coins} coinów i {enemy.Exp} doświadczenia");
@@ -265,7 +258,7 @@ public class Hero
     {
         Hp += 30;
         Pd += 15;
-        Console.WriteLine($"Uleczono {Name} o 30 Hp i dodano 15 Pd");
+        Console.WriteLine($"Uleczono {Name} o 30 HP i dodano 15 PD");
     }
 
     public void LevelUp()
@@ -325,15 +318,14 @@ public class Shop
 {
     public void SellSword(Hero hero)
     {
-        hero.Items.Add("Miecz");
         hero.Coins -= 30;
-        Console.WriteLine($"{hero.Name}, zakupiłeś Miecz za 30 coinów");
+        hero.Items.Add("Miecz");
+        Console.WriteLine($"{hero.Name} kupił Miecz za 30 coinów");
     }
 
     public void SellPotion(Hero hero)
     {
-        hero.Items.Add("Mikstura zdrowia");
         hero.Coins -= 20;
-        Console.WriteLine($"{hero.Name}, zakupiłeś Miksturę zdrowia za 20 coinów");
+        Console.WriteLine($"{hero.Name} kupił Miksturę zdrowia za 20 coinów");
     }
 }
