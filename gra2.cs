@@ -278,7 +278,7 @@ public class Enemy
     private static readonly Random random = new Random();
 
     public string Name { get; private set; }
-    public int Hp { get; private set; }
+    public int Hp { get; set; }
     public int Attack { get; private set; }
     public int Coins { get; private set; }
     public int Exp { get; private set; }
@@ -299,7 +299,7 @@ public class Boss
     private static readonly Random random = new Random();
 
     public string Name { get; private set; }
-    public int Hp { get; private set; }
+    public int Hp { get; set; }
     public int Attack { get; private set; }
     public int Coins { get; private set; }
     public int Exp { get; private set; }
@@ -320,12 +320,12 @@ public class Shop
     {
         hero.Coins -= 30;
         hero.Items.Add("Miecz");
-        Console.WriteLine($"{hero.Name} kupił Miecz za 30 coinów");
+        Console.WriteLine($"kupiłeś Miecz za 30 coinów");
     }
 
     public void SellPotion(Hero hero)
     {
         hero.Coins -= 20;
-        Console.WriteLine($"{hero.Name} kupił Miksturę zdrowia za 20 coinów");
+        Console.WriteLine($"kupiłeś Miksturę zdrowia za 20 coinów");
     }
 }
